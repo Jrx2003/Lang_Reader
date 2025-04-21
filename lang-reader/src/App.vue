@@ -6,12 +6,20 @@
       </div>
       <nav class="app-nav">
         <router-link to="/projects">Project List</router-link>
-        <div class="dark-mode-toggle">
-          <label class="switch">
-            <input type="checkbox" v-model="isDarkMode">
-            <span class="slider round"></span>
-          </label>
-          <span class="mode-label">Night Mode</span>
+        <div class="app-links">
+          <a href="https://youtu.be/wnayoMFFCqo" target="_blank" class="header-link">
+            <span class="link-icon"></span> Tutorial Video
+          </a>
+          <a href="/user_guide.html" target="_blank" class="header-link">
+            <span class="link-icon"></span> User Guide
+          </a>
+          <div class="dark-mode-toggle">
+            <label class="switch">
+              <input type="checkbox" v-model="isDarkMode">
+              <span class="slider round"></span>
+            </label>
+            <span class="mode-label">Night Mode</span>
+          </div>
         </div>
       </nav>
     </header>
@@ -139,6 +147,30 @@ a:hover {
 .app-nav {
   display: flex;
   align-items: center;
+}
+
+.app-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  gap: 0.25rem;
+  transition: color 0.3s;
+}
+
+.header-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.link-icon {
+  font-size: 1rem;
 }
 
 .app-nav a {
@@ -368,6 +400,12 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+  }
+  
+  .app-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
   
   .app-nav a {
